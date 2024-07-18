@@ -14,6 +14,7 @@ class Product(models.Model):
     stock = models.IntegerField()
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     image_url = models.URLField(max_length=200, blank=True, null=True)
+    image = models.ImageField(upload_to='products/', null=True, blank=True)
 
     def __str__(self):
         return self.name
